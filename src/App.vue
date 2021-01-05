@@ -78,7 +78,7 @@
   export default {
     data: () => ({
         items: [
-            { title: 'Todo', icon: 'mdi-format-list-checks', to: '/' },
+            { title: 'Task', icon: 'mdi-format-list-checks', to: '/' },
             { title: 'About', icon: 'mdi-help-box', to: '/about' },
         ],
         drawer: null 
