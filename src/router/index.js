@@ -1,14 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Task from "../views/Task.vue";
+import Tasks from "../views/Tasks.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Task",
-    component: Task
+    name: "Tasks",
+    component: Tasks
   },
   {
     path: "/about",
