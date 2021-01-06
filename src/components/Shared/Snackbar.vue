@@ -1,7 +1,6 @@
 <template>
     <v-snackbar
       v-model="$store.state.snackbar.show"
-      :multi-line="multiLine"
     >
       {{ $store.state.snackbar.text }}
 
