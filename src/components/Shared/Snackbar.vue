@@ -1,0 +1,19 @@
+<template>
+    <v-snackbar
+      v-model="$store.state.snackbar.show"
+      :multi-line="multiLine"
+    >
+      {{ $store.state.snackbar.text }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="red"
+          text
+          v-bind="attrs"
+          @click="$store.commit('hideSnackbar')"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
+</template>

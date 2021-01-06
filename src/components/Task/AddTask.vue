@@ -20,7 +20,7 @@
         methods: {
             addTask(){
                 if (this.newTaskTitle == '') return
-                this.$store.commit('addTask', this.newTaskTitle)
+                this.$store.dispatch('addTask', this.newTaskTitle)
                 this.newTaskTitle = ''
             },
         }
