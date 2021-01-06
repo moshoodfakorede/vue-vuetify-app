@@ -18,12 +18,13 @@
                 >{{ task.title }}</v-list-item-title>
             </v-list-item-content>
             <v-list-item-action>
-                <v-btn 
+                <!-- <v-btn 
                   @click.stop="dialogs.delete = true" 
                   icon
                 >
                     <v-icon color="primary lighten-1">mdi-delete</v-icon>
-                </v-btn>
+                </v-btn> -->
+                <task-menu :task="task" />
             </v-list-item-action>
 
             </template>
@@ -31,11 +32,11 @@
         </v-list-item>
         <v-divider></v-divider>
 
-        <delete-dialog 
+        <!-- <delete-dialog 
           v-if="dialogs.delete"
           :task="task" 
           @closeDialog="dialogs.delete = false" 
-         />
+         /> -->
     </div>
 </template>
 
@@ -43,12 +44,7 @@
     export default {
       props: ['task'],
       components: {
-          'delete-dialog': require('@/components/Task/Dialogs/DeleteDialog.vue').default
+        'task-menu': require('@/components/Task/TaskMenu.vue').default
       },
-      data: () => ({
-          dialogs: {
-            delete: false
-          }
-      })
     }
 </script>
