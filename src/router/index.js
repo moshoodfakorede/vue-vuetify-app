@@ -22,7 +22,12 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
+});
+
+router.beforeEach((to, from, next) => {
+    document.title = `${process.env.VUE_APP_NAME} - ${to.name}`
+    next();
 });
 
 export default router;

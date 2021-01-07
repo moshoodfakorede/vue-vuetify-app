@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    appName: process.env.VUE_APP_NAME,
     search: null,
     tasks: [
         { id: 1, title: 'Eat', completed: false, dueDate: '2021-01-07' },
