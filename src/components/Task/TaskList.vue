@@ -4,7 +4,7 @@
       flat
     >
       <task 
-        v-for="(task, i) in $store.state.tasks" 
+        v-for="(task, i) in $store.getters.filteredTasks" 
         :key="i" 
         :task="task"
       />
