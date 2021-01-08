@@ -80,7 +80,13 @@
             {
                 title: 'Sort',
                 icon: 'mdi-drag-horizontal-variant', 
-                click() { this.$store.commit('toggleSorting') }
+                click() { 
+                    if(!this.$store.state.search) {
+                        this.$store.commit('toggleSorting') 
+                    } else {
+                        this.$store.commit('showSnackbar', 'Oops! You cant sort while filtering...')
+                    }
+                }
             },
         ],
       }),

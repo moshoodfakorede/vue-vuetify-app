@@ -11,12 +11,7 @@ export default new Vuex.Store({
   state: {
     appName: process.env.VUE_APP_NAME,
     search: null,
-    tasks: [
-        // { id: 1, title: 'Eat', completed: false, dueDate: '2021-01-07' },
-        // { id: 2, title: 'Sleep', completed: false, dueDate: '2021-01-08' },
-        // { id: 3, title: 'Code', completed: false, dueDate: '2021-01-09' },
-        // { id: 4, title: 'Repeat', completed: false, dueDate: null },
-    ],
+    tasks: [],
     snackbar: {
         show: false,
         text: ''
@@ -99,7 +94,7 @@ export default new Vuex.Store({
         })
     },
     deleteTask({ commit }, id) {
-        db.collection('tasks').doc({ id: payload.id }).delete()
+        db.collection('tasks').doc({ id: id }).delete()
         .then(() => {
             commit('deleteTask', id)
             commit('showSnackbar', 'Task Deleted!')

@@ -1,5 +1,6 @@
 <template>
   <v-text-field 
+   :disabled="$store.state.sorting"
    :value="$store.state.search"
    @input="$store.commit('setSearch', $event)"
    @focus="searchClosed = false"

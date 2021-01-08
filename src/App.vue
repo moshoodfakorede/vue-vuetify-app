@@ -51,12 +51,12 @@
       dark
       src="mountains.jpg" 
       prominent
-      height="170"
+      :height="$route.path === '/' ? '220' : '170'"
     >
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
-          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+          gradient="to top right, rgba(19,84,122,.9), rgba(128,208,199,.9)"
         ></v-img>
       </template>
       
@@ -73,6 +73,12 @@
           </v-row>
           <v-row>
             <live-date-time />
+          </v-row>
+          <v-row 
+            class="pt-4"
+            v-if="$route.path === '/'"
+          >
+              <add-task />
           </v-row>
       </v-container>
 
@@ -97,6 +103,7 @@
     components: {
         'search': require('@/components/Utils/Search.vue').default,
         'live-date-time': require('@/components/Utils/LiveDateTime.vue').default,
+        'add-task': require('@/components/Task/AddTask').default,
         'snackbar': require('@/components/Shared/Snackbar.vue').default,
     },
     mounted() {

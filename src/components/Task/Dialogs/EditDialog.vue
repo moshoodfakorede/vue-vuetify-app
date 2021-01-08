@@ -59,6 +59,7 @@
                     
                     this.$store.dispatch('updateTask', payload)
                     this.$emit('closeDialog')
+                    this.$vuetify.goTo(0, { duration: 0 })
                 }
                 
             }
