@@ -30,7 +30,7 @@ import Task from '@/components/Task/Task'
                     return this.$store.getters.filteredTasks
                 },
                 set(value) {
-                    this.$store.commit('setTasks', value)
+                    this.$store.dispatch('setTasks', value)
                 }
             }
         }

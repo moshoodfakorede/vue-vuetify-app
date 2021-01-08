@@ -98,6 +98,9 @@
         'search': require('@/components/Utils/Search.vue').default,
         'live-date-time': require('@/components/Utils/LiveDateTime.vue').default,
         'snackbar': require('@/components/Shared/Snackbar.vue').default,
+    },
+    mounted() {
+        this.$store.dispatch('getTasks')
     }
   }
 </script>
