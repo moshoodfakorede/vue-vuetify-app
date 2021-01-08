@@ -59,7 +59,7 @@
         dialogs: {
           edit: false,
           delete: false,
-          dueDate: false
+          dueDate: false,
         },
         items: [
             { 
@@ -76,6 +76,11 @@
                 title: 'Delete',
                 icon: 'mdi-delete', 
                 click() { this.dialogs.delete = true }
+            },
+            {
+                title: 'Sort',
+                icon: 'mdi-drag-horizontal-variant', 
+                click() { this.$store.commit('toggleSorting') }
             },
         ],
       }),
